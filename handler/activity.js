@@ -1,10 +1,10 @@
 const activityUseCase = require("../usecase/activity")
-const activityRepository = require("../adapter/activity")
+const activityRepository = require("../repository/activity")
 
 module.exports = {
-    New: (app) => {
+    New: (app, options) => {
         let activityRepo = new activityRepository.Activity({
-            databaseInterface: "hello"
+            mysqlDB: options.mysqlDB
         })
         let activityUC = new activityUseCase.Activity({
             activityRepository: activityRepo

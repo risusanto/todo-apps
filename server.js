@@ -7,7 +7,12 @@ const route = require('./routes')
 require('dotenv').config()
 const app = express()
 const port = process.env.PORT || 3000
-route.New(app)
+
+options = {
+    mysqlDB: "hello"
+}
+
+route.New(app, options)
 
 app.get("/", (req, res) => {
     res.json({

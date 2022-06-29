@@ -1,7 +1,7 @@
 const activityHandler = require("./handler/activity")
 
 module.exports = {
-    New: (app) => {
-        activityHandler.New(app)
+    New: (app, options) => {
+        activityHandler.New(app, options)
     }
 }
